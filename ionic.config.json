@@ -1,0 +1,7 @@
+{
+  "name": "LuluDecoracao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
