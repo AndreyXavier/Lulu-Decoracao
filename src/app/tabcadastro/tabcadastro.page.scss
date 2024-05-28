@@ -1,0 +1,48 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #3880ff;
+    margin-top: 2.5px;
+}
+
+.voltar {
+    font-size: 35px;
+    color: #3880ff;
+    margin-left: 5px;
+}
+
+.form ion-button {
+    margin-top: 22px;
+}
+
+.form {
+    max-width: 75%;
+    margin: 30px auto;
+}
+
+
+ion-input.input {
+    --padding-start: 16px;
+    --padding-end: 16px;
+
+    --border-width: 2.5px;
+    --border-color: #eee;
+    --border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.lado {
+    position: relative;
+}
+
+.spinner {
+    position: absolute;
+    right: 10px; /* Posiciona o spinner à direita dentro do input */
+    top: 50%; /* Centraliza o spinner verticalmente */
+    transform: translateY(-50%); /* Ajusta para a centralização vertical */
+}
+
+
+.has-focus.input-fill-outline.ion-valid.sc-ion-input-md-h, .input-fill-outline.ion-touched.ion-invalid.sc-ion-input-md-h {
+    --border-color: #3880ff;
+}

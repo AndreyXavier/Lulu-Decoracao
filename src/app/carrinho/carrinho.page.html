@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Pesquisar" slot="start"></ion-searchbar> 
+    <ion-icon class="carrinho" name="bag-outline" slot="end"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1"><ion-icon (click)="goBack()" class="voltar" name="arrow-back-circle-outline"></ion-icon></ion-col>
+        <ion-col><h3>Itens no carrinho <span>()</span></h3></ion-col>
+      </ion-row>
+    </ion-grid>
+    
+
+    <ion-item-divider>
+      <ion-label>
+        <h2 class="endereco-nome">Entrega para xxxxxxx</h2>
+        <p>Bloco xx Casa XXX</p>
+      </ion-label>
+      <ion-button class="endereco" fill="solid" size="small" slot="end">Editar</ion-button>
+    </ion-item-divider>
+    
+
+    <ion-item-divider>
+    
+      <ion-thumbnail slot="start">
+        <img src="./../../assets/quadros/animacao-desenho2.png">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="nome">Quadro One Piece</h2>
+        <p>R$</p>
+      </ion-label>
+      <ion-icon class="lixeira" name="trash-outline" slot="end"></ion-icon>
+    
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-thumbnail slot="start">
+        <img src="./../../assets/quadros/filme-serie2.png">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="nome">Quadro Harry Potter</h2>
+        <p>R$</p>
+      </ion-label>
+      <ion-icon class="lixeira" name="trash-outline" slot="end"></ion-icon>
+    </ion-item-divider>
+    
+
+  </ion-list>
+
+  <ion-list>
+    <ion-item-divider>
+      <ion-label class="nome">Preço (... itens)</ion-label>
+      <ion-note slot="end">R$</ion-note>
+    </ion-item-divider>
+    
+    <ion-item-divider>
+      <ion-label class="nome">Desconto</ion-label>
+      <ion-note class="verde" slot="end">R$</ion-note>
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-label class="nome">Frete</ion-label>
+      <ion-note class="verde" slot="end">R$</ion-note>
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-label class="nome">Total</ion-label>
+      <ion-note slot="end">R$</ion-note>
+    </ion-item-divider>
+
+
+    <div class="pagar">
+      <ion-button (click)="goToPagamento()">Pagamento</ion-button>
+    </div>
+  </ion-list>
+
+  
+</ion-content>
