@@ -1,351 +1,142 @@
 <ion-header [translucent]="true">
-
   <ion-toolbar>
-    <ion-searchbar placeholder="Pesquisar" slot="start"></ion-searchbar> 
+    <ion-searchbar placeholder="Pesquisar" slot="start"></ion-searchbar>
     <ion-icon name="bag-outline" slot="end" (click)="goToCarrinho()"></ion-icon>
   </ion-toolbar>
-
 </ion-header>
 
-          <!--DIVISÃO-->
-
+<!--DIVISÃO-->
 
 <ion-content [fullscreen]="true">
-
   <!--SLIDES AQUI-->
   <swiper-container scrollbar="true" autoplay="true" speed="550">
-    <swiper-slide> <img src="./../../assets/img/slide 1.png"/> </swiper-slide>
-    <swiper-slide> <img src="./../../assets/img/slide 2.png"/> </swiper-slide>
-    <swiper-slide> <img src="./../../assets/img/slide 3.png"/> </swiper-slide>
+    <swiper-slide> <img src="./../../assets/img/slide 1.png" /> </swiper-slide>
+    <swiper-slide> <img src="./../../assets/img/slide 2.png" /> </swiper-slide>
+    <swiper-slide> <img src="./../../assets/img/slide 3.png" /> </swiper-slide>
   </swiper-container>
 
   <!--ITENS PARA SEPARAR OS QUADROS-->
   <div class="swiper-wrapper">
-
-    <div class="swiper-slide" data-swiper-slide-index="0" style="margin-right: 8px;">
-      <button class="outros" (click)="selectTab('destaques')" [class.ativo]="activeTab === 'destaques'">Destaques</button>
+    <div
+      class="swiper-slide"
+      data-swiper-slide-index="0"
+      style="margin-right: 8px"
+    >
+      <button
+        class="outros"
+        (click)="selectTab('destaques')"
+        [class.ativo]="activeTab === 'destaques'"
+      >
+        Destaques
+      </button>
     </div>
-  
-    <div class="swiper-slide" data-swiper-slide-index="1" style="margin-right: 8px;">
-      <button class="outros" (click)="selectTab('promocoes')" [class.ativo]="activeTab === 'promocoes'">Promoções</button>
-    </div>
-  
 
+    <div
+      class="swiper-slide"
+      data-swiper-slide-index="1"
+      style="margin-right: 8px"
+    >
+      <button
+        class="outros"
+        (click)="selectTab('promocoes')"
+        [class.ativo]="activeTab === 'promocoes'"
+      >
+        Promoções
+      </button>
+    </div>
   </div>
 
   <ion-grid *ngIf="activeTab === 'destaques'">
     <ion-row>
-      
-      <div class="imagem-container" id="open-modal">
-        <img src="./../../assets/quadros/churrasco1.png" class="imagem-coluna">
+      <div
+        *ngFor="let quadro of quadrosAleatoriosDestaque; let i = index"
+        class="imagem-container"
+        id="open-modal-{{i}}"
+      >
+        <img src="{{quadro.imagem}}" class="imagem-coluna" />
 
         <div class="imagem-pequena">
+          <img src="./../../assets/quadros/image2.png" />
+          <img class="transparente" src="./../../assets/quadros/image.png" />
+          <p class="nome-quadro">Quadro {{quadro.titulo}}</p>
 
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Manual do Churrasco</p>
-          
           <div class="valor-seta">
-            <p class="valor">R$25,00</p>
+            <p class="valor">{{ quadro.preco | currency:'BRL' }}</p>
             <ion-icon name="arrow-forward"></ion-icon>
           </div>
-
         </div>
 
-        <ion-modal trigger="open-modal" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
+        <ion-modal
+          trigger="open-modal-{{i}}"
+          [initialBreakpoint]="0.65"
+          [breakpoints]="[0, 0.65]"
+        >
           <ng-template>
             <ion-content class="ion-padding">
               <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/churrasco1.png" class="imagem-coluna">
+                <div class="imagem-container" id="modal-{{i}}">
+                  <img src="{{quadro.imagem}}" class="imagem-coluna" />
                 </div>
 
-                <h2 id="h2modal">Quadro Manual do Churrasco</h2>
-                <p id="pmodal">R$25,00</p>
+                <h2 id="h2modal">Quadro {{quadro.titulo}}</h2>
+                <p id="pmodal">{{ quadro.preco | currency:'BRL' }}</p>
                 <ion-note>Incluso todos os impostos</ion-note>
-                
+
                 <div class="divisor"></div>
 
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
+                <ion-button id="buttonmodal" (click)="addQuadro(quadro)">Adicionar ao carrinho</ion-button>
               </div>
             </ion-content>
           </ng-template>
         </ion-modal>
       </div>
-
-
-      <div class="imagem-container" id="open-modal1">
-        <img src="./../../assets/quadros/bebida1.png" class="imagem-coluna">
-
-        <div class="imagem-pequena">
-
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Bebibda Cerveja</p>
-          
-          <div class="valor-seta">
-            <p class="valor">R$25,00</p>
-            <ion-icon name="arrow-forward"></ion-icon>
-          </div>
-
-        </div>
-
-        <ion-modal trigger="open-modal1" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
-          <ng-template>
-            <ion-content class="ion-padding">
-              <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/bebida1.png" class="imagem-coluna">
-                </div>
-
-                <h2 id="h2modal">Quadro Bebida Cerveja</h2>
-                <p id="pmodal">R$25,00</p>
-                <ion-note>Incluso todos os impostos</ion-note>
-                
-                <div class="divisor"></div>
-
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      </div>
-
-
-      <div class="imagem-container" id="open-modal2">
-        <img src="./../../assets/quadros/filme-serie1.png" class="imagem-coluna">
-        
-        <div class="imagem-pequena">
-
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Star Wars</p>
-          
-          <div class="valor-seta">
-            <p class="valor">R$25,00</p>
-            <ion-icon name="arrow-forward"></ion-icon>
-          </div>
-
-        </div>
-        <ion-modal trigger="open-modal2" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
-          <ng-template>
-            <ion-content class="ion-padding">
-              <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/filme-serie1.png" class="imagem-coluna">
-                </div>
-
-                <h2 id="h2modal">Quadro Star Wars</h2>
-                <p id="pmodal">R$25,00</p>
-                <ion-note>Incluso todos os impostos</ion-note>
-                
-                <div class="divisor"></div>
-
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      </div>
-
-
-      <div class="imagem-container" id="open-modal3">
-        <img src="./../../assets/quadros/animacao-desenho1.png" class="imagem-coluna">
-        
-        <div class="imagem-pequena">
-
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Pokémon</p>
-          
-          <div class="valor-seta">
-            <p class="valor">R$25,00</p>
-            <ion-icon name="arrow-forward"></ion-icon>
-          </div>
-
-        </div>
-        <ion-modal trigger="open-modal3" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
-          <ng-template>
-            <ion-content class="ion-padding">
-              <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/animacao-desenho1.png" class="imagem-coluna">
-                </div>
-
-                <h2 id="h2modal">Quadro Pokémon</h2>
-                <p id="pmodal">R$25,00</p>
-                <ion-note>Incluso todos os impostos</ion-note>
-                
-                <div class="divisor"></div>
-
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      </div>
-
     </ion-row>
   </ion-grid>
-
+  <!-- ////// -->
   <ion-grid *ngIf="activeTab === 'promocoes'">
     <ion-row>
-      
-      <div class="imagem-container" id="open-modal5">
-        <img src="./../../assets/quadros/animacao-desenho2.png" class="imagem-coluna">
+      <div
+        *ngFor="let quadro of quadrosAleatoriosPromocao; let i = index"
+        class="imagem-container"
+        id="open-modal-{{i}}"
+      >
+        <img src="{{quadro.imagem}}" class="imagem-coluna" />
 
         <div class="imagem-pequena">
+          <img src="./../../assets/quadros/image2.png" />
+          <img class="transparente" src="./../../assets/quadros/image.png" />
+          <p class="nome-quadro">Quadro {{quadro.titulo}}</p>
 
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro One Piece</p>
-          
           <div class="valor-seta">
-            <p class="valor">R$20,00</p>
+            <p class="valor">{{ quadro.preco | currency:'BRL' }}</p>
             <ion-icon name="arrow-forward"></ion-icon>
           </div>
-
         </div>
-        <ion-modal trigger="open-modal5" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
+
+        <ion-modal
+          trigger="open-modal-{{i}}"
+          [initialBreakpoint]="0.65"
+          [breakpoints]="[0, 0.65]"
+        >
           <ng-template>
             <ion-content class="ion-padding">
               <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/animacao-desenho2.png" class="imagem-coluna">
+                <div class="imagem-container" id="modal-{{i}}">
+                  <img src="{{quadro.imagem}}" class="imagem-coluna" />
                 </div>
 
-                <h2 id="h2modal">Quadro One Piece</h2>
-                <p id="pmodal">R$20,00</p>
+                <h2 id="h2modal">Quadro {{quadro.titulo}}</h2>
+                <p id="pmodal">{{ quadro.preco | currency:'BRL' }}</p>
                 <ion-note>Incluso todos os impostos</ion-note>
-                
+
                 <div class="divisor"></div>
 
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
+                <ion-button id="buttonmodal" (click)="addQuadro(quadro)" >Adicionar ao carrinho</ion-button>
               </div>
             </ion-content>
           </ng-template>
         </ion-modal>
       </div>
-
-      <div class="imagem-container" id="open-modal6">
-        <img src="./../../assets/quadros/filme-serie3.png" class="imagem-coluna">
-
-        <div class="imagem-pequena">
-
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Jurassic World</p>
-          
-          <div class="valor-seta">
-            <p class="valor">R$20,00</p>
-            <ion-icon name="arrow-forward"></ion-icon>
-          </div>
-
-        </div>
-        <ion-modal trigger="open-modal6" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
-          <ng-template>
-            <ion-content class="ion-padding">
-              <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/filme-serie3.png" class="imagem-coluna">
-                </div>
-
-                <h2 id="h2modal">Quadro Jurassic World</h2>
-                <p id="pmodal">R$20,00</p>
-                <ion-note>Incluso todos os impostos</ion-note>
-                
-                <div class="divisor"></div>
-
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      </div>
-
-
-      <div class="imagem-container" id="open-modal7">
-        <img src="./../../assets/quadros/bebida2.png" class="imagem-coluna">
-        
-        <div class="imagem-pequena">
-
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Bebida Cerveja Posto</p>
-          
-          <div class="valor-seta">
-            <p class="valor">R$20,00</p>
-            <ion-icon name="arrow-forward"></ion-icon>
-          </div>
-
-        </div>
-        <ion-modal trigger="open-modal7" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
-          <ng-template>
-            <ion-content class="ion-padding">
-              <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/bebida2.png" class="imagem-coluna">
-                </div>
-
-                <h2 id="h2modal">Quadro Bebida Cerveja Posto</h2>
-                <p id="pmodal">R$20,00</p>
-                <ion-note>Incluso todos os impostos</ion-note>
-                
-                <div class="divisor"></div>
-
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      </div>
-
-      <div class="imagem-container" id="open-modal8">
-        <img src="./../../assets/quadros/churrasco2.png" class="imagem-coluna">
-        
-        <div class="imagem-pequena">
-
-          <img src="./../../assets/quadros/image2.png">
-          <img class="transparente" src="./../../assets/quadros/image.png">
-          <p class="nome-quadro">Quadro Cantinho do Churrasco</p>
-          
-          <div class="valor-seta">
-            <p class="valor">R$20,00</p>
-            <ion-icon name="arrow-forward"></ion-icon>
-          </div>
-
-        </div>
-        <ion-modal trigger="open-modal8" [initialBreakpoint]="0.65" [breakpoints]="[0, 0.65]">
-          <ng-template>
-            <ion-content class="ion-padding">
-              <div class="ion-margin-top">
-
-                <div class="imagem-container" id="modal">
-                  <img src="./../../assets/quadros/churrasco2.png" class="imagem-coluna">
-                </div>
-
-                <h2 id="h2modal">Quadro Cantinho do Churrasco</h2>
-                <p id="pmodal">R$20,00</p>
-                <ion-note>Incluso todos os impostos</ion-note>
-                
-                <div class="divisor"></div>
-
-                <ion-button id="buttonmodal">Adicionar ao carrinho</ion-button>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
-      </div>
-
     </ion-row>
   </ion-grid>
-
-
 </ion-content>

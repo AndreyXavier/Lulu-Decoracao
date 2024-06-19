@@ -1,0 +1,122 @@
+[
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/animacao-desenho2.png?alt=media&token=348bab65-08e2-4df7-b992-829e9874012c",
+    "titulo": "One Piece",
+    "preco": 25.0,
+    "categoria": "animacoes_desenho"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/animacao-desenho1.png?alt=media&token=d9f2c71c-c43c-4101-9ca1-17fe81417583",
+    "titulo": "Pokémon",
+    "preco": 25.0,
+    "categoria": "animacoes_desenho"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/animacao-desenho3.png?alt=media&token=6bf600a2-25cb-4c3c-81f5-056689d36d6c",
+    "titulo": "Incrível Mundo de Gumball",
+    "preco": 25.0,
+    "categoria": "animacoes_desenho"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/animacao-desenho4.png?alt=media&token=82cb7147-beef-487e-8782-7e07cf7a4246",
+    "titulo": "Steven Universo",
+    "preco": 30.0,
+    "categoria": "animacoes_desenho"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/animacao-desenho5.png?alt=media&token=b9e0413c-e1c8-462c-adbb-b124fb6c5246",
+    "titulo": "Mickey Mouse",
+    "preco": 30.0,
+    "categoria": "animacoes_desenho"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/filme-serie3.png?alt=media&token=b1875e2c-3650-4074-9b26-571939dcd1aa",
+    "titulo": "Jurassic World",
+    "preco": 20.0,
+    "categoria": "filmes_series"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/filme-serie1.png?alt=media&token=087bd96a-568d-4cd3-8179-476186665226",
+    "titulo": "Star Wars",
+    "preco": 25.0,
+    "categoria": "filmes_series"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/filme-serie2.png?alt=media&token=4e9edd9b-1935-4061-8ebb-6e45c9c5ea27",
+    "titulo": "Harry Potter",
+    "preco": 25.0,
+    "categoria": "filmes_series"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/filme-serie4.png?alt=media&token=8de67220-2d78-4c0f-97ee-4d9f29a7c25f",
+    "titulo": "The Walking Dead",
+    "preco": 30.0,
+    "categoria": "filmes_series"
+  },
+  {
+    "imagem": "https://console.firebase.google.com/u/0/project/luludecorafirebase/storage/luludecorafirebase.appspot.com/files?hl=pt-br",
+    "titulo": "Breaking Bad",
+    "preco": 30.0,
+    "categoria": "filmes_series"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/bebida2.png?alt=media&token=057182a7-587f-405e-8a02-5649dbbab2ec",
+    "titulo":  "Bebida Cerveja Posto",
+    "preco": 20.0,
+    "categoria": "bebidas"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/bebida1.png?alt=media&token=845a69bb-da51-42af-9b76-ff94583088d7",
+    "titulo": "Bebida Cerveja",
+    "preco": 25.0,
+    "categoria": "bebidas"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/bebida3.png?alt=media&token=2c23e209-35fa-4f8e-80c7-448568b27e79",
+    "titulo": "Coca-Cola",
+    "preco": 25.0,
+    "categoria": "bebidas"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/bebida4.png?alt=media&token=9294d04f-4c91-49ad-bc3f-ae84545f1523",
+    "titulo": "Café",
+    "preco": 30.0,
+    "categoria": "bebidas"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/bebida5.png?alt=media&token=d649d3a1-0534-4ae8-93bd-32c7fc6ae581",
+    "titulo": "Bebidas",
+    "preco": 30.0,
+    "categoria": "bebidas"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/churrasco2.png?alt=media&token=245acc50-aa9e-4da8-885b-935ab09e14fd",
+    "titulo": "Cantinho do Churrasco",
+    "preco": 20.0,
+    "categoria": "churrasco"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/churrasco1.png?alt=media&token=ae3fa671-180c-4fed-ae94-af216c3e2108",
+    "titulo": "Manual do Churrasco",
+    "preco": 25.0,
+    "categoria": "churrasco"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/churrasco3.png?alt=media&token=36a2d515-f9bf-4392-9535-b784a23205f2",
+    "titulo": "Churrasco",
+    "preco": 25.0,
+    "categoria": "churrasco"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/churrasco4.png?alt=media&token=b1a9d49d-eeb6-4595-9651-fe4661a5462b",
+    "titulo": "Churrasco",
+    "preco": 30.0,
+    "categoria": "churrasco"
+  },
+  {
+    "imagem": "https://firebasestorage.googleapis.com/v0/b/luludecorafirebase.appspot.com/o/churrasco5.png?alt=media&token=dca38a0f-6ddc-4007-a87b-57154bf7162f",
+    "titulo": "Churrasco",
+    "preco": 30.0,
+    "categoria": "churrasco"
+  }
+]

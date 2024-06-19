@@ -7,13 +7,12 @@ import { IonicModule } from '@ionic/angular';
 import { PagamentosPageRoutingModule } from './pagamentos-routing.module';
 
 import { PagamentosPage } from './pagamentos.page';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PagamentosPageRoutingModule
+    PagamentosPageRoutingModule,
   ],
   declarations: [PagamentosPage]
 })

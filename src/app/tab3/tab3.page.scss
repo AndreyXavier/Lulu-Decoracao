@@ -1,44 +1,54 @@
 h1 {
-    display: flex;
-    justify-content: center;
-    color: #3880ff;
+  display: flex;
+  justify-content: center;
+  color: #3880ff;
 }
 
 
-.form {
-    max-width: 70%;
-    margin: 30px auto;
+form {
+  max-width: 70%;
+  margin: 30px auto;
 }
 
-ion-input.input {
-    --padding-start: 16px;
-    --padding-end: 16px;
+ion-input {
+  --padding-start: 16px;
+  --padding-end: 16px;
 
-    --border-width: 2.5px;
-    --border-color: #eee;
-    --border-radius: 6px;
-    margin-bottom: 10px;
+  --border-width: 2.5px;
+  --border-color: #eee;
+  --border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 
-.form ion-button {
-    margin-top: 22px;
+form ion-button {
+  margin-top: 22px;
 }
 
 .divisor {
-    width: calc(100% - 40px);
-    height: 1.5px;
-    background-color: #ccc; 
-    margin-top: 36px;
-    margin-left: 20px;
-}
-  
-.register-link {
-    text-align: center;
-    margin-top: 30px;
-}
-  
-.register-link a {
-    color: blue;
+  width: calc(100% - 40px);
+  height: 1.5px;
+  background-color: #ccc;
+  margin-top: 40px;
+  margin-left: 20px;
 }
 
+.register-link {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.register-link a {
+  color: blue;
+}
+
+// CSS DO CASO LOGADO
+
+ion-item-divider, ion-icon {
+  color: black;
+}
+
+ion-button#logado {
+  max-width: 40%;
+  margin: 20px auto;
+}

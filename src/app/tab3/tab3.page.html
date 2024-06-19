@@ -1,20 +1,58 @@
 <ion-content [fullscreen]="true">
+  <!-- Caso não logado -->
+  <div *ngIf="!user; else loggedInTemplate">
+    <h1>FAZER LOGIN</h1>
 
-  <h1>FAZER LOGIN</h1>
+    <form (submit)="login()">
+      <ion-input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      labelPlacement="floating"
+      fill="outline"
+      label="E-mail"
+      placeholder="Digite seu e-mail"
+      ></ion-input>
 
-  <div class="form">
+      <ion-input
+      type="password"
+      labelPlacement="floating"
+      fill="outline"
+      label="Senha"
+      placeholder="Digite sua senha"
+      [(ngModel)]="password"
+      name="password"
+      ></ion-input>
+      <ion-button expand="full" type="submit">Login</ion-button>
+    </form>
 
-    <ion-input class="input" label="E-mail" type="email" labelPlacement="floating" fill="outline" placeholder="Digite seu e-mail"></ion-input>
-    
-    <ion-input class="input" label="Senha" type="password" labelPlacement="floating" fill="outline" placeholder="Digite sua senha"></ion-input>
 
-    <ion-button expand="block">Login</ion-button>
+    <div class="divisor"></div>
+
+    <div class="register-link">
+      <p>Não tem uma conta? <a [routerLink]="['/tabcadastro']">Registrar-se</a></p>
+    </div>
   </div>
 
-  <div class="divisor"></div>
-  
-  <div class="register-link">
-    <p>Não tem uma conta? <a [routerLink]="['/tabcadastro']">Registrar-se</a></p>
-  </div>
+  <!-- Caso Logado -->
+  <ng-template #loggedInTemplate>
+    <h1>PERFIL</h1>
 
+    <ion-item-divider>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label>{{user.nome}}</ion-label>
+    </ion-item-divider>
+
+    <ion-item-divider *ngIf="user.endereco">
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>{{user.endereco}}</ion-label>
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-label>{{user.email}}</ion-label>
+    </ion-item-divider>
+
+    <ion-button expand="full" id="logado" (click)="logout()">Sair</ion-button>
+  </ng-template>
 </ion-content>

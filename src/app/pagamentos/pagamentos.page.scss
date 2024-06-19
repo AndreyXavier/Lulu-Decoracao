@@ -55,3 +55,33 @@ h4 {
     width: 60%;
     --border-radius: 10px;
 }
+
+.total {
+  margin-top: 25%;
+}
+
+.nome {
+  color: black;
+  font-size: 15px;
+}
+
+.pagamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 175px;
+}
+
+.icon-pagar {
+  font-size: 100px;
+  color: green;
+}
+
+.texto-pagar {
+  margin: 10px auto;
+  font-size: 17px;
+}
+
+.voltar-pagar {
+  margin-top: 20px;
+}

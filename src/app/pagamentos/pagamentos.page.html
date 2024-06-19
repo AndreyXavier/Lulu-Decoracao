@@ -1,83 +1,111 @@
 <ion-header [translucent]="true">
-
   <ion-toolbar>
-    <ion-searchbar placeholder="Pesquisar" slot="start"></ion-searchbar> 
+    <ion-searchbar placeholder="Pesquisar" slot="start"></ion-searchbar>
     <ion-icon class="carrinho" name="bag-outline" slot="end"></ion-icon>
   </ion-toolbar>
-
 </ion-header>
 
-
 <ion-content [fullscreen]="true">
-
   <ion-list>
-
     <ion-grid>
       <ion-row>
-        <ion-col size="1"><ion-icon (click)="goBack()" class="voltar" name="arrow-back-circle-outline"></ion-icon></ion-col>
+        <ion-col size="1"
+          ><ion-icon
+            (click)="goBack()"
+            class="voltar"
+            name="arrow-back-circle-outline"
+          ></ion-icon
+        ></ion-col>
         <ion-col><h3>Formas de Pagamento</h3></ion-col>
       </ion-row>
     </ion-grid>
 
     <div class="pagamentos">
-      <ion-item-divider>
-        <ion-thumbnail slot="start">
-          <img src="./../../assets/img/cartao1.png">
-        </ion-thumbnail>
-        <ion-label>
-          <p>xxxxxxxxxx</p>
-        </ion-label>
-        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-      </ion-item-divider>
-  
-      <ion-item-divider>
-        <ion-thumbnail slot="start">
-          <img src="./../../assets/img/cartao2.png">
-        </ion-thumbnail>
-        <ion-label>
-          <p>xxxxxxxxxx</p>
-        </ion-label>
-        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-      </ion-item-divider>
-  
-      <ion-item-divider>
-        <ion-thumbnail slot="start">
-          <img src="./../../assets/img/pix.png">
-        </ion-thumbnail>
-        <ion-label>
-          <p>Pix</p>
-        </ion-label>
-        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-      </ion-item-divider>
-  
-      <ion-item-divider>
-        <ion-thumbnail slot="start">
-          <img src="./../../assets/img/cartao3.png">
-        </ion-thumbnail>
-        <ion-label>
-          <p>Google Pay</p>
-        </ion-label>
-        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-      </ion-item-divider>
+      <ion-radio-group [(ngModel)]="selectedPaymentMethod">
+        <ion-item>
+          <ion-item-divider>
+            <ion-thumbnail slot="start">
+              <img src="./../../assets/img/cartao1.png" />
+            </ion-thumbnail>
+            <ion-label>
+              <p>Crédito</p>
+            </ion-label>
+            <ion-radio slot="end" value="credit"></ion-radio>
+          </ion-item-divider>
+        </ion-item>
+
+        <ion-item>
+          <ion-item-divider>
+            <ion-thumbnail slot="start">
+              <img src="./../../assets/img/cartao2.png" />
+            </ion-thumbnail>
+            <ion-label>
+              <p>Débito</p>
+            </ion-label>
+            <ion-radio slot="end" value="debit"></ion-radio>
+          </ion-item-divider>
+        </ion-item>
+
+        <ion-item>
+          <ion-item-divider>
+            <ion-thumbnail slot="start">
+              <img src="./../../assets/img/pix.png" />
+            </ion-thumbnail>
+            <ion-label>
+              <p>Pix</p>
+            </ion-label>
+            <ion-radio slot="end" value="pix"></ion-radio>
+          </ion-item-divider>
+        </ion-item>
+      </ion-radio-group>
     </div>
 
     <h4>Endereço</h4>
 
-    <ion-item-divider>
+    <ion-item-divider *ngIf="user && user.endereco">
       <ion-thumbnail class="endereco" slot="start">
-        <img src="./../../assets/img/endereco.png">
+        <img src="./../../assets/img/endereco.png" />
       </ion-thumbnail>
       <ion-label>
-        <p>Rua xxxxxxx, bloco xx casa xx</p>
+        <p>
+          {{ user.nome }} -- {{ user.endereco }}, {{ user.bairro }} - {{
+          user.complemento }}
+        </p>
       </ion-label>
-      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      <ion-icon
+        slot="end"
+        name="chevron-forward-outline"
+        (click)="editar()"
+      ></ion-icon>
+    </ion-item-divider>
+    <ion-item-divider class="total">
+      <ion-label class="nome">Total</ion-label>
+      <ion-note class="nome" slot="end"
+        >{{ totalDoCarrinho | currency:'BRL'}}</ion-note
+      >
     </ion-item-divider>
 
-
     <div class="pagar">
-      <ion-button>Pagar</ion-button>
+      <ion-button (click)="setOpen(true)">Pagar</ion-button>
     </div>
+
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <div class="pagamento">
+            <ion-icon
+              class="icon-pagar"
+              name="checkmark-circle-outline"
+            ></ion-icon>
+
+            <h2 class="texto-pagar">Pagamento realizado com sucesso!</h2>
+
+            <ion-button class="voltar-pagar" (click)="goBack1();"
+              >Voltar ao menu</ion-button
+            >
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </ion-list>
-
-
 </ion-content>

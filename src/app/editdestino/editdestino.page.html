@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="cadastroForm" (ngSubmit)="edit()">
+    <ion-input
+      class="input"
+      label="Cep"
+      type="text"
+      fill="outline"
+      labelPlacement="floating"
+      placeholder="Digite seu cep Ex.: 00000000"
+      formControlName="cep"
+      (ionBlur)="consultarCep()"
+    ></ion-input>
+    <ion-input
+      class="input"
+      label="Endereço"
+      type="text"
+      fill="outline"
+      labelPlacement="floating"
+      placeholder="Endereço"
+      formControlName="logradouro"
+      readonly
+    ></ion-input>
+    <ion-input
+      class="input"
+      label="Bairro"
+      type="text"
+      fill="outline"
+      labelPlacement="floating"
+      placeholder="Bairro"
+      formControlName="bairro"
+      readonly
+    ></ion-input>
+    <ion-input
+      class="input"
+      label="Número"
+      type="text"
+      fill="outline"
+      labelPlacement="floating"
+      placeholder="Digite o número da sua casa"
+      formControlName="numero"
+    ></ion-input>
+    <ion-input
+      class="input"
+      label="Complemento"
+      type="text"
+      fill="outline"
+      labelPlacement="floating"
+      placeholder="Complemento"
+      formControlName="complemento"
+    ></ion-input>
+    <ion-button expand="block" type="submit">Editar</ion-button>
+  </form>
+</ion-content>
